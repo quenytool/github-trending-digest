@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GitHub Trend Digest — 每日趋势·幽默解读</title>
+<meta name="description" content="每天从 GitHub Trending 抓取热门项目，用幽默的风格解读技术趋势。纯自动化，纯娱乐。">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<!-- Navigation -->
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="/" class="logo">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
+        <circle cx="12" cy="12" r="11" stroke="currentColor" stroke-width="2"/>
+        <path d="M8 12h8M12 8v8" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+      </svg>
+      <span>GH Trend Digest</span>
+    </a>
+    <div class="nav-links">
+      <a href="https://github.com/trending" target="_blank" class="nav-link">GitHub Trending ↗</a>
+      <span id="post-count" class="nav-count"></span>
+    </div>
+  </div>
+</nav>
+
+<!-- Hero -->
+<header class="hero">
+  <div class="hero-inner">
+    <div class="hero-badge">
+      <span class="pulse-dot"></span>
+      每日自动更新
+    </div>
+    <h1 class="hero-title">GitHub<br>Trend Digest</h1>
+    <p class="hero-subtitle">
+      每天自动抓取 GitHub Trending，用幽默的视角解读技术潮流。<br>
+      没有 AI 生成的废话，只有真实数据和真心段子。
+    </p>
+    <div class="hero-stats" id="hero-stats">
+      <div class="stat"><span class="stat-num">—</span><span class="stat-label">已收录</span></div>
+      <div class="stat"><span class="stat-num">—</span><span class="stat-label">热门项目</span></div>
+      <div class="stat"><span class="stat-num">—</span><span class="stat-label">今日之星</span></div>
+    </div>
+  </div>
+</header>
+
+<!-- Content -->
+<main class="content">
+  <!-- Loading state -->
+  <div id="loading" class="loading">
+    <div class="loading-spinner"></div>
+    <p>加载中...</p>
+  </div>
+
+  <!-- Post list -->
+  <section id="post-list" class="post-list"></section>
+
+  <!-- Post detail (hidden by default) -->
+  <article id="post-detail" class="post-detail hidden"></article>
+
+  <!-- Empty state -->
+  <div id="empty-state" class="empty-state hidden">
+    <div class="empty-icon">📭</div>
+    <h2>还没有文章</h2>
+    <p>数据正在路上，请稍后再来。</p>
+  </div>
+
+  <!-- Error state -->
+  <div id="error-state" class="error-state hidden">
+    <div class="empty-icon">⚠️</div>
+    <h2>加载失败</h2>
+    <p id="error-msg"></p>
+  </div>
+</main>
+
+<!-- Footer -->
+<footer class="footer">
+  <div class="footer-inner">
+    <p>数据来源 <a href="https://github.com/trending">GitHub Trending</a> · 由 <a href="https://github.com">GH Trend Digest</a> 自动生成</p>
+    <p class="footer-meta">🤖 幽默感如有冒犯，纯属巧合。代码如有 bug，那是 feature。</p>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+</body>
+</html>
